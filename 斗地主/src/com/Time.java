@@ -21,33 +21,33 @@ public class Time extends Thread {
 	public void run() {
 
 		while (i > -1 && isRun) {
-			main.time[1].setText("µ¹¼ÆÊ±:" + i--);
-			second(1);// µÈÒ»Ãë
+			main.time[1].setText("å€’è®¡æ—¶:" + i--);
+			second(1);// ç­‰ä¸€ç§’ï¼Œæµ‹è¯•1
 		}
-		if (i == -1)// Õı³£ÖÕ½á£¬ËµÃ÷³¬Ê±
-			main.time[1].setText("²»ÇÀ");
+		if (i == -1)// æ­£å¸¸ç»ˆç»“ï¼Œè¯´æ˜è¶…æ—¶ï¼Œæµ‹è¯•2
+			main.time[1].setText("ä¸æŠ¢");
 		
 		main.landlord[0].setVisible(false);
-		main.landlord[1].setVisible(false);
+		main.landlord[1].setVisible(false);     //æµ‹è¯•3
 		for (Card card2 : main.playerList[1])
-			card2.canClick = true;// ¿É±»µã»÷
-		// Èç¹û×Ô¼ºÇÀµ½µØÖ÷
-		if (main.time[1].getText().equals("ÇÀµØÖ÷")) {
-			// µÃµ½µØÖ÷ÅÆ
+			card2.canClick = true;// å¯è¢«ç‚¹å‡»
+		// å¦‚æœè‡ªå·±æŠ¢åˆ°åœ°ä¸»
+		if (main.time[1].getText().equals("æŠ¢åœ°ä¸»")) {
+			// å¾—åˆ°åœ°ä¸»ç‰Œ
 			main.playerList[1].addAll(main.lordList);
 			openlord(true);
-			second(2);// µÈ´ıÎåÃë
+			second(2);// ç­‰å¾…äº”ç§’
 			Common.order(main.playerList[1]);
 			Common.rePosition(main, main.playerList[1], 1);
 			setlord(1);
 		} else {
-			// µçÄÔÑ¡µØÖ÷
+			// ç”µè„‘é€‰åœ°ä¸»
 			if (Common.getScore(main.playerList[0]) < Common
 					.getScore(main.playerList[2])) {
-				main.time[2].setText("ÇÀµØÖ÷");
+				main.time[2].setText("æŠ¢åœ°ä¸»");
 				main.time[2].setVisible(true);
-				setlord(2);// Éè¶¨µØÖ÷
-				openlord(true);//°ÑµØÖ÷ÅÆ·­¿ª
+				setlord(2);// è®¾å®šåœ°ä¸»
+				openlord(true);//æŠŠåœ°ä¸»ç‰Œç¿»å¼€
 				second(3);
 				main.playerList[2].addAll(main.lordList);
 				Common.order(main.playerList[2]);
@@ -55,9 +55,9 @@ public class Time extends Thread {
 				openlord(false);
 
 			} else {
-				main.time[0].setText("ÇÀµØÖ÷");
+				main.time[0].setText("æŠ¢åœ°ä¸»");
 				main.time[0].setVisible(true);
-				setlord(0);// Éè¶¨µØÖ÷
+				setlord(0);// è®¾å®šåœ°ä¸»
 				openlord(true);
 				second(3);
 				main.playerList[0].addAll(main.lordList);
@@ -67,47 +67,47 @@ public class Time extends Thread {
 
 			}
 		}
-		// Ñ¡ÍêµØÖ÷ºó ¹Ø±ÕµØÖ÷°´Å¥
+		// é€‰å®Œåœ°ä¸»å å…³é—­åœ°ä¸»æŒ‰é’®
 		main.landlord[0].setVisible(false);
 		main.landlord[1].setVisible(false);
 		turnOn(false);
 		for (int i = 0; i < 3; i++)
 		{
-			main.time[i].setText("²»Òª");
+			main.time[i].setText("ä¸è¦");
 			main.time[i].setVisible(false);
 		}
-		// ¿ªÊ¼ÓÎÏ· ¸ù¾İµØÖ÷²»Í¬Ë³Ğò²»Í¬
+		// å¼€å§‹æ¸¸æˆ æ ¹æ®åœ°ä¸»ä¸åŒé¡ºåºä¸åŒ
 		main.turn=main.dizhuFlag;
 		while (true) {
 			
-			if(main.turn==1) //ÎÒ
+			if(main.turn==1) //æˆ‘
 			{
-				turnOn(true);// ³öÅÆ°´Å¥ --ÎÒ³öÅÆ
-				timeWait(30, 1);// ÎÒ×Ô¼ºµÄ¶¨Ê±Æ÷
-				System.out.println("ÎÒ³öÅÆ");
-				turnOn(false);//Ñ¡Íê¹Ø±Õ
+				turnOn(true);// å‡ºç‰ŒæŒ‰é’® --æˆ‘å‡ºç‰Œ
+				timeWait(30, 1);// æˆ‘è‡ªå·±çš„å®šæ—¶å™¨
+				System.out.println("æˆ‘å‡ºç‰Œ");
+				turnOn(false);//é€‰å®Œå…³é—­
 				main.turn=(main.turn+1)%3;
-				if(win())//ÅĞ¶ÏÊäÓ®
+				if(win())//åˆ¤æ–­è¾“èµ¢
 					break;
 			}
 			if (main.turn==0) 
 			{
 				computer0();
 				main.turn=(main.turn+1)%3;
-				if(win())//ÅĞ¶ÏÊäÓ®
+				if(win())//åˆ¤æ–­è¾“èµ¢
 					break;
 			}
 			if(main.turn==2)
 			{
 				computer2();
 				main.turn=(main.turn+1)%3;
-				if(win())//ÅĞ¶ÏÊäÓ®
+				if(win())//åˆ¤æ–­è¾“èµ¢
 					break;
 			}
 		}
 	}
 
-	// µÈ´ıiÃë
+	// ç­‰å¾…iç§’
 	public void second(int i) {
 		try {
 			Thread.sleep(i * 1000);
@@ -117,26 +117,26 @@ public class Time extends Thread {
 		}
 	}
 
-	// µØÖ÷ÅÆ·­¿´
+	// åœ°ä¸»ç‰Œç¿»çœ‹
 	public void openlord(boolean is) {
 		for (int i = 0; i < 3; i++) {
 			if (is)
-				main.lordList.get(i).turnFront(); // µØÖ÷ÅÆ·­¿´
+				main.lordList.get(i).turnFront(); // åœ°ä¸»ç‰Œç¿»çœ‹
 			else {
-				main.lordList.get(i).turnRear(); // µØÖ÷ÅÆ±ÕºÏ
+				main.lordList.get(i).turnRear(); // åœ°ä¸»ç‰Œé—­åˆ
 			}
-			main.lordList.get(i).canClick = true;// ¿É±»µã»÷
+			main.lordList.get(i).canClick = true;// å¯è¢«ç‚¹å‡»
 		}
 	}
 
-	// Éè¶¨µØÖ÷
+	// è®¾å®šåœ°ä¸»
 	public void setlord(int i) {
 		Point point = new Point();
-		if (i == 1)// ÎÒÊÇµØÖ÷
+		if (i == 1)// æˆ‘æ˜¯åœ°ä¸»
 		{
 			point.x = 80;
 			point.y = 430;
-			main.dizhuFlag = 1;// Éè¶¨µØÖ÷
+			main.dizhuFlag = 1;// è®¾å®šåœ°ä¸»
 		}
 		if (i == 0) {
 			point.x = 80;
@@ -152,74 +152,74 @@ public class Time extends Thread {
 		main.dizhu.setVisible(true);
 	}
 
-	// ´ò¿ª³öÅÆ°´Å¥
+	// æ‰“å¼€å‡ºç‰ŒæŒ‰é’®
 	public void turnOn(boolean flag) {
 		main.publishCard[0].setVisible(flag);
 		main.publishCard[1].setVisible(flag);
 	}
 
-	// µçÄÔ0×ßÅÆ(ÎÒ´ú±í1)
+	// ç”µè„‘0èµ°ç‰Œ(æˆ‘ä»£è¡¨1)
 	public void computer0() {
-		timeWait(3, 0); // ¶¨Ê±
-		ShowCard(0); // ³öÅÆ
+		timeWait(3, 0); // å®šæ—¶
+		ShowCard(0); // å‡ºç‰Œ
 		
 	}
 
-	// µçÄÔ2×ßÅÆ(ÎÒ´ú±í1)
+	// ç”µè„‘2èµ°ç‰Œ(æˆ‘ä»£è¡¨1)
 	public void computer2() {
-		timeWait(3, 2); // ¶¨Ê±
-		ShowCard(2); // ³öÅÆ
+		timeWait(3, 2); // å®šæ—¶
+		ShowCard(2); // å‡ºç‰Œ
 		
 	}
 
-	// ×ßÅÆ
+	// èµ°ç‰Œ
 	public void ShowCard(int role) {
 		Model model = Common.getModel(main.playerList[role]);
-		// ´ı×ßµÄÅÆ
+		// å¾…èµ°çš„ç‰Œ
 		List<String> list = new ArrayList<String>();
-		// Èç¹ûÊÇÖ÷¶¯³öÅÆ
-		if (main.time[(role + 1) % 3].getText().equals("²»Òª")
-				&& main.time[(role + 2) % 3].getText().equals("²»Òª")) {
-			// ÓĞµ¥³öµ¥ (³ı¿ª3´ø£¬·É»úÄÜ´øµÄµ¥ÅÆ)
+		// å¦‚æœæ˜¯ä¸»åŠ¨å‡ºç‰Œ
+		if (main.time[(role + 1) % 3].getText().equals("ä¸è¦")
+				&& main.time[(role + 2) % 3].getText().equals("ä¸è¦")) {
+			// æœ‰å•å‡ºå• (é™¤å¼€3å¸¦ï¼Œé£æœºèƒ½å¸¦çš„å•ç‰Œ)
 			if (model.a1.size() > (model.a111222.size() * 2 + model.a3.size())) {
 				list.add(model.a1.get(model.a1.size() - 1));
-			}// ÓĞ¶Ô×Ó³ö¶Ô×Ó (³ı¿ª3´ø£¬·É»ú)
+			}// æœ‰å¯¹å­å‡ºå¯¹å­ (é™¤å¼€3å¸¦ï¼Œé£æœº)
 			else if (model.a2.size() > (model.a111222.size() * 2 + model.a3
 					.size())) {
 				list.add(model.a2.get(model.a2.size() - 1));
-			}// ÓĞË³×Ó³öË³×Ó
+			}// æœ‰é¡ºå­å‡ºé¡ºå­
 			else if (model.a123.size() > 0) {
 				list.add(model.a123.get(model.a123.size() - 1));
-			}// ÓĞ3´ø¾Í³ö3´ø£¬Ã»ÓĞ¾Í³ö¹â3
+			}// æœ‰3å¸¦å°±å‡º3å¸¦ï¼Œæ²¡æœ‰å°±å‡ºå…‰3
 			else if (model.a3.size() > 0) {
-				// 3´øµ¥,ÇÒ·Ç¹Ø¼üÊ±¿Ì²»ÄÜ´øÍõ£¬2
+				// 3å¸¦å•,ä¸”éå…³é”®æ—¶åˆ»ä¸èƒ½å¸¦ç‹ï¼Œ2
 				if (model.a1.size() > 0) {
 					list.add(model.a1.get(model.a1.size() - 1));
-				}// 3´ø¶Ô
+				}// 3å¸¦å¯¹
 				else if (model.a2.size() > 0) {
 					list.add(model.a2.get(model.a2.size() - 1));
 				}
 				list.add(model.a3.get(model.a3.size() - 1));
-			}// ÓĞË«Ë³³öË«Ë³
+			}// æœ‰åŒé¡ºå‡ºåŒé¡º
 			else if (model.a112233.size() > 0) {
 				list.add(model.a112233.get(model.a112233.size() - 1));
-			}// ÓĞ·É»ú³ö·É»ú
+			}// æœ‰é£æœºå‡ºé£æœº
 			else if (model.a111222.size() > 0) {
 				String name[] = model.a111222.get(0).split(",");
-				// ´øµ¥
+				// å¸¦å•
 				if (name.length / 3 <= model.a1.size()) {
 					list.add(model.a111222.get(model.a111222.size() - 1));
 					for (int i = 0; i < name.length / 3; i++)
 						list.add(model.a1.get(i));
-				} else if (name.length / 3 <= model.a2.size())// ´øË«
+				} else if (name.length / 3 <= model.a2.size())// å¸¦åŒ
 				{
 					list.add(model.a111222.get(model.a111222.size() - 1));
 					for (int i = 0; i < name.length / 3; i++)
 						list.add(model.a2.get(i));
 				}
-				// ÓĞÕ¨µ¯³öÕ¨µ¯
+				// æœ‰ç‚¸å¼¹å‡ºç‚¸å¼¹
 			} else if (model.a4.size() > 0) {
-				// 4´ø2,1
+				// 4å¸¦2,1
 				int sizea1 = model.a1.size();
 				int sizea2 = model.a2.size();
 				if (sizea1 >= 2) {
@@ -232,70 +232,70 @@ public class Time extends Thread {
 					list.add(model.a2.get(sizea1 - 2));
 					list.add(model.a4.get(0));
 					
-				} else {// Ö±½ÓÕ¨
+				} else {// ç›´æ¥ç‚¸
 					list.add(model.a4.get(0));
 					
 				}
 
 			}
-		}// Èç¹ûÊÇ¸úÅÆ
+		}// å¦‚æœæ˜¯è·Ÿç‰Œ
 		else {
 			List<Card> player = main.currentList[(role + 2) % 3].size() > 0 
 					? main.currentList[(role + 2) % 3]
-					: main.currentList[(role + 1) % 3];//µ±Ç°³öµÄÅÆ
+					: main.currentList[(role + 1) % 3];//å½“å‰å‡ºçš„ç‰Œ
 			
-			CardType cType=Common.jugdeType(player);//×ÀÃæ±ğÈË³öµÄÅÆ
-			//Èç¹ûÊÇµ¥ÅÆ
+			CardType cType=Common.jugdeType(player);//æ¡Œé¢åˆ«äººå‡ºçš„ç‰Œ
+			//å¦‚æœæ˜¯å•ç‰Œ
 			if(cType==CardType.c1)
 			{
 				AI_1(model.a1, player, list, role);
-			}//Èç¹ûÊÇ¶Ô×Ó
+			}//å¦‚æœæ˜¯å¯¹å­
 			else if(cType==CardType.c2)
 			{
 				AI_1(model.a2, player, list, role);
-			}//3´ø
+			}//3å¸¦
 			else if(cType==CardType.c3)
 			{
 				AI_1(model.a3, player, list, role);
-			}//Õ¨µ¯
+			}//ç‚¸å¼¹
 			else if(cType==CardType.c4)
 			{
 				AI_1(model.a4, player, list, role);
-			}//Èç¹ûÊÇ3´ø1
+			}//å¦‚æœæ˜¯3å¸¦1
 			else if(cType==CardType.c31){
-				 //Æ«¼Ò Éæ¼°µ½²ğÅÆ
+				 //åå®¶ æ¶‰åŠåˆ°æ‹†ç‰Œ
 				//if((role+1)%3==main.dizhuFlag)
 					AI_2(model.a3, model.a1, player, list, role);
-			}//Èç¹ûÊÇ3´ø2
+			}//å¦‚æœæ˜¯3å¸¦2
 			else if(cType==CardType.c32){
-				 //Æ«¼Ò
+				 //åå®¶
 				//if((role+1)%3==main.dizhuFlag)
 					AI_2(model.a3, model.a2, player, list, role);
-			}//Èç¹ûÊÇ4´ø11
+			}//å¦‚æœæ˜¯4å¸¦11
 			else if(cType==CardType.c411){
 					AI_5(model.a4, model.a1, player, list, role);
 			}
-			//Èç¹ûÊÇ4´ø22
+			//å¦‚æœæ˜¯4å¸¦22
 			else if(cType==CardType.c422){
 					AI_5(model.a4, model.a2, player, list, role);
 			}
-			//Ë³×Ó
+			//é¡ºå­
 			else if(cType==CardType.c123){
 				AI_3(model.a123, player, list, role);
 			}
-			//Ë«Ë³
+			//åŒé¡º
 			else if(cType==CardType.c1122){
 				AI_3(model.a112233, player, list, role);
 			}
-			//·É»ú´øµ¥
+			//é£æœºå¸¦å•
 			else if(cType==CardType.c11122234){
 				AI_4(model.a111222,model.a1, player, list, role);
 			}
-			//·É»ú´ø¶Ô
+			//é£æœºå¸¦å¯¹
 			else if(cType==CardType.c1112223344){
 				AI_4(model.a111222,model.a2, player, list, role);
 			}
-			//Õ¨µ¯
+			//ç‚¸å¼¹
 			if(list.size()==0)
 			{
 				int len4=model.a4.size();
@@ -304,7 +304,7 @@ public class Time extends Thread {
 			}
 		}
 
-		// ¶¨Î»³öÅÆ
+		// å®šä½å‡ºç‰Œ
 		main.currentList[role].clear();
 		if (list.size() > 0) {
 			Point point = new Point();
@@ -312,8 +312,8 @@ public class Time extends Thread {
 				point.x = 200;
 			if (role == 2)
 				point.x = 550;
-			point.y = (400 / 2) - (list.size() + 1) * 15 / 2;// ÆÁÄ»ÖĞ²¿
-			// ½«name×ª»»³ÉCard
+			point.y = (400 / 2) - (list.size() + 1) * 15 / 2;// å±å¹•ä¸­éƒ¨
+			// å°†nameè½¬æ¢æˆCard
 			for (int i = 0, len = list.size(); i < len; i++) {
 				List<Card> cards = getCardByName(main.playerList[role],
 						list.get(i));
@@ -327,13 +327,13 @@ public class Time extends Thread {
 			Common.rePosition(main, main.playerList[role], role);
 		} else {
 			main.time[role].setVisible(true);
-			main.time[role].setText("²»Òª");
+			main.time[role].setText("ä¸è¦");
 		}
 		for(Card card:main.currentList[role])
 			card.turnFront();
 	}
 
-	// °´name»ñµÃCard£¬·½±ã´ÓModelÈ¡³ö
+	// æŒ‰nameè·å¾—Cardï¼Œæ–¹ä¾¿ä»Modelå–å‡º
 	public List<Card> getCardByName(List<Card> list, String n) {
 		String[] name = n.split(",");
 		List<Card> cardsList = new ArrayList<Card>();
@@ -347,7 +347,7 @@ public class Time extends Thread {
 		}
 		return cardsList;
 	}
-	//Ë³×Ó
+	//é¡ºå­
 	public void AI_3(List<String> model,List<Card> player,List<String> list,int role){
 		
 		for(int i=0,len=model.size();i<len;i++)
@@ -360,9 +360,9 @@ public class Time extends Thread {
 			}
 		}
 	}
-	//·É»ú´øµ¥£¬Ë«
+	//é£æœºå¸¦å•ï¼ŒåŒ
 	public void AI_4(List<String> model1,List<String> model2,List<Card> player,List<String> list,int role){
-		//ÅÅĞò°´ÖØ¸´Êı
+		//æ’åºæŒ‰é‡å¤æ•°
 		player=Common.getOrder2(player);
 		int len1=model1.size();
 		int len2=model2.size();
@@ -380,9 +380,9 @@ public class Time extends Thread {
 			}
 		}
 	}
-	//4´ø1£¬2
+	//4å¸¦1ï¼Œ2
 	public void AI_5(List<String> model1,List<String> model2,List<Card> player,List<String> list,int role){
-		//ÅÅĞò°´ÖØ¸´Êı
+		//æ’åºæŒ‰é‡å¤æ•°
 		player=Common.getOrder2(player);
 		int len1=model1.size();
 		int len2=model2.size();
@@ -398,9 +398,9 @@ public class Time extends Thread {
 			}
 		}
 	}
-	//µ¥ÅÆ£¬¶Ô×Ó£¬3¸ö£¬4¸ö,Í¨ÓÃ
+	//å•ç‰Œï¼Œå¯¹å­ï¼Œ3ä¸ªï¼Œ4ä¸ª,é€šç”¨
 	public void AI_1(List<String> model,List<Card> player,List<String> list,int role){
-		//¶¥¼Ò
+		//é¡¶å®¶
 		if((role+1)%3==main.dizhuFlag)
 		{
 			
@@ -412,7 +412,7 @@ public class Time extends Thread {
 					break;
 				}
 			}
-		}else {//Æ«¼Ò
+		}else {//åå®¶
 			
 			for(int len=model.size(),i=len-1;i>=0;i--)
 			{
@@ -424,18 +424,18 @@ public class Time extends Thread {
 			}
 		}
 	}
-	//3´ø1,2,4´ø1,2
+	//3å¸¦1,2,4å¸¦1,2
 	public void AI_2(List<String> model1,List<String> model2,List<Card> player,List<String> list,int role){
-		//model1ÊÇÖ÷ÅÆ,model2ÊÇ´øÅÆ,playerÊÇÍæ¼Ò³öµÄÅÆ,,listÊÇ×¼±¸»ØµÄÅÆ
-		//ÅÅĞò°´ÖØ¸´Êı
+		//model1æ˜¯ä¸»ç‰Œ,model2æ˜¯å¸¦ç‰Œ,playeræ˜¯ç©å®¶å‡ºçš„ç‰Œ,,listæ˜¯å‡†å¤‡å›çš„ç‰Œ
+		//æ’åºæŒ‰é‡å¤æ•°
 		player=Common.getOrder2(player);
 		int len1=model1.size();
 		int len2=model2.size();
-		//Èç¹ûÓĞÍõÖ±½ÓÕ¨ÁË
+		//å¦‚æœæœ‰ç‹ç›´æ¥ç‚¸äº†
 		if(len1>0&&model1.get(0).length()<10)
 		{
 			list.add(model1.get(0));
-			System.out.println("ÍõÕ¨");
+			System.out.println("ç‹ç‚¸");
 			return;
 		}
 		if(len1<1 || len2<1)
@@ -452,37 +452,37 @@ public class Time extends Thread {
 		if(list.size()<2)
 			list.clear();
 	}
-	// ÑÓÊ±£¬Ä£ÄâÊ±ÖÓ
+	// å»¶æ—¶ï¼Œæ¨¡æ‹Ÿæ—¶é’Ÿ
 	public void timeWait(int n, int player) {
 
 		if (main.currentList[player].size() > 0)
 			Common.hideCards(main.currentList[player]);
-		if (player == 1)// Èç¹ûÊÇÎÒ£¬10Ãëµ½ºóÖ±½ÓÏÂÒ»¼Ò³öÅÆ
+		if (player == 1)// å¦‚æœæ˜¯æˆ‘ï¼Œ10ç§’åˆ°åç›´æ¥ä¸‹ä¸€å®¶å‡ºç‰Œ
 		{
 			int i = n;
 
 			while (main.nextPlayer == false && i >= 0) {
 				// main.container.setComponentZOrder(main.time[player], 0);
-				main.time[player].setText("µ¹¼ÆÊ±:" + i);
+				main.time[player].setText("å€’è®¡æ—¶:" + i);
 				main.time[player].setVisible(true);
 				second(1);
 				i--;
 			}
 			if (i == -1) {
-				main.time[player].setText("³¬Ê±");
+				main.time[player].setText("è¶…æ—¶");
 			}
 			main.nextPlayer = false;
 		} else {
 			for (int i = n; i >= 0; i--) {
 				second(1);
 				// main.container.setComponentZOrder(main.time[player], 0);
-				main.time[player].setText("µ¹¼ÆÊ±:" + i);
+				main.time[player].setText("å€’è®¡æ—¶:" + i);
 				main.time[player].setVisible(true);
 			}
 		}
 		main.time[player].setVisible(false);
 	}
-	//Í¨¹ıname¹ÀÖµ
+	//é€šè¿‡nameä¼°å€¼
 	public  int getValueInt(String n){
 		String name[]=n.split(",");
 		String s=name[0];
@@ -493,7 +493,7 @@ public class Time extends Thread {
 			i+=13;
 		return i;
 	}
-	//ÅĞ¶ÏÊäÓ®
+	//åˆ¤æ–­è¾“èµ¢
 	public boolean win(){
 		for(int i=0;i<3;i++){
 			if(main.playerList[i].size()==0)
@@ -501,9 +501,9 @@ public class Time extends Thread {
 				String s;
 				if(i==1)
 				{
-					s="¹§Ï²Äã£¬Ê¤ÀûÁË!";
+					s="æ­å–œä½ ï¼Œèƒœåˆ©äº†!";
 				}else {
-					s="¹§Ï²µçÄÔ"+i+",Ó®ÁË! ÄãµÄÖÇÉÌÓĞ´ıÌá¸ßÅ¶";
+					s="æ­å–œç”µè„‘"+i+",èµ¢äº†! ä½ çš„æ™ºå•†æœ‰å¾…æé«˜å“¦";
 				}
 				JOptionPane.showMessageDialog(main, s);
 				return true;
