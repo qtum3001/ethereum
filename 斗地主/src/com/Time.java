@@ -22,7 +22,7 @@ public class Time extends Thread {
 
 		while (i > -1 && isRun) {
 			main.time[1].setText("倒计时:" + i--);
-			second(1);// 等一秒，测试1
+			second(1);// 等一秒，测试123132131564654
 		}
 		if (i == -1)// 正常终结，说明超时，测试2
 			main.time[1].setText("不抢");
