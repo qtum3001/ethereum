@@ -28,7 +28,7 @@ public class Time extends Thread {
 			main.time[1].setText("不抢");
 		
 		main.landlord[0].setVisible(false);
-		main.landlord[1].setVisible(false);     //测试3
+		main.landlord[1].setVisible(false);     //测试315465
 		for (Card card2 : main.playerList[1])
 			card2.canClick = true;// 可被点击
 		// 如果自己抢到地主
