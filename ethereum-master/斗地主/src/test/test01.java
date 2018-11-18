@@ -39,4 +39,4 @@ class A{
 	public A(int a){
 		this.a=a;
 	}
-}
+}//我改了啊，李敏
