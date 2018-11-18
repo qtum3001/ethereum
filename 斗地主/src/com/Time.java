@@ -24,7 +24,7 @@ public class Time extends Thread {
 			main.time[1].setText("倒计时:" + i--);
 			second(1);// 等一秒，测试1
 		}
-		if (i == -1)// 正常终结，说明超时，测试2
+		if (i == -1)// 正常终结，说明超时，测试2321313
 			main.time[1].setText("不抢");
 		
 		main.landlord[0].setVisible(false);
