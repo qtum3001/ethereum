@@ -22,13 +22,14 @@ public class Time extends Thread {
 
 		while (i > -1 && isRun) {
 			main.time[1].setText("倒计时:" + i--);
-			second(1);// 等一秒，测试1111111111111111111
+			second(1);// 等一秒，测试1
 		}
-		if (i == -1)// 正常终结，说明超时，测试2222222222222222222
+
+		if (i == -1)// 正常终结，说明超时，测试2
 			main.time[1].setText("不抢");
 		
 		main.landlord[0].setVisible(false);
-		main.landlord[1].setVisible(false);     //测试3
+		main.landlord[1].setVisible(false);     //测试315465
 		for (Card card2 : main.playerList[1])
 			card2.canClick = true;// 可被点击
 		// 如果自己抢到地主
