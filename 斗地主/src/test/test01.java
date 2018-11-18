@@ -24,7 +24,7 @@ public class test01 {
 
 				public int compare(A o1, A o2) {
 					// TODO Auto-generated method stub
-					return o2.a-o1.a;
+					return o2.a-o1.a;//随便写个
 				}
 			});
 			System.out.println();
@@ -39,4 +39,4 @@ class A{
 	public A(int a){
 		this.a=a;
 	}
-}//今天我没有写代码
+
