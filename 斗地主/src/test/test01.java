@@ -39,4 +39,4 @@ class A{
 	public A(int a){
 		this.a=a;
 	}
-}
+}//今天我没有写代码
