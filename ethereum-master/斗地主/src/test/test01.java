@@ -11,9 +11,9 @@ public class test01 {
 
 	public static void main(String[] args) {
 			List<A> list = new ArrayList<A>();
-			list.add(new A(1));      //yq
+			list.add(new A(1));      //jeremy
 			list.add(new A(3));      //jeremy
-			list.add(new A(2)); 
+			list.add(new A(2));      //jeremy
 			list.add(new A(7));
 			list.add(new A(6));
 		//	Collections.sort(list);
