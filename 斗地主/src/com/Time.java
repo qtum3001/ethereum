@@ -57,7 +57,7 @@ public class Time extends Thread {
 			} else {
 				main.time[0].setText("抢地主");
 				main.time[0].setVisible(true);
-				setlord(0);// 设定地主
+				setlord(0);// 设定地主dz
 				openlord(true);
 				second(3);
 				main.playerList[0].addAll(main.lordList);
