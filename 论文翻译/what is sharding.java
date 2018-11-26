@@ -1,3 +1,5 @@
+//Â∞ÜÊØèÊÆµÁøªËØëÊîæÂà∞ÂØπÂ∫îÊÆµËêΩ‰∏ãÊñπ
+
 What is Sharding? Guide to this Ethereum Scaling Concept Explained
 
 As the scaling debate in cryptocurrencies continues, some potential solutions have actually been in development for quite some time now. Specifically, in the case of Ethereum, where a large focus is placed on decentralization and security at the expense of scalability, the application of sharding in conjunction with implementing Proof of Stake consensus is seen as the much needed mechanism through which the network can scale to practical levels for applications while still retaining its decentralization and security.
@@ -6,28 +8,28 @@ Sharding is a complex topic, especially when applied to a decentralized, peer to
 
 Sharding and Distributed Computing Background
 
-Sharding is actually much older than blockchain technology and has been implemented in a variety of systems from business database optimizations to Google°Øs global Spanner database. Essentially, sharding is a particular method for horizontally partitioning data within a database. More generally, the database is broken into little pieces called °∞shards°±, that when aggregated together form the original database.
+Sharding is actually much older than blockchain technology and has been implemented in a variety of systems from business database optimizations to Google‚Äôs global Spanner database. Essentially, sharding is a particular method for horizontally partitioning data within a database. More generally, the database is broken into little pieces called ‚Äúshards‚Äù, that when aggregated together form the original database.
 
 In distributed blockchain networks, the network consists of a series of nodes connected in a peer to peer format, with no central authority. As is the case with current blockchain systems, each node stores all states of the network and processes all of the transactions. While this provides the high level security through decentralization, especially in Proof of Work systems such as Bitcoin and Ethereum, it leads to legitimate scaling problems.
 
 Using Ethereum as an example, a full node in the Ethereum network stores the entire state of the blockchain, including account balances, storage, and contract code. Unfortunately, as the network increases in size at an exponential pace, the consensus only increases linearly. This limitation is due to the communication needed between the nodes needed to reach consensus.
 
-Nodes in the network do not have special privileges and every node in the network stores and processes every transaction. As a result, in a network the size of Ethereum°Øs, issues such as high gas costs and longer transaction confirmation times become noticeable problems when the network is strained. The network is only as fast as the individual nodes rather than the sum of its parts.
+Nodes in the network do not have special privileges and every node in the network stores and processes every transaction. As a result, in a network the size of Ethereum‚Äôs, issues such as high gas costs and longer transaction confirmation times become noticeable problems when the network is strained. The network is only as fast as the individual nodes rather than the sum of its parts.
 
 Sharding helps to alleviate these issues by providing an interesting, yet complex solution. The concept involves grouping subsets of nodes into shards which in turn process transactions specific to that shard. It allows the system to process many transactions in parallel, thus significantly increasing throughput.
 
 A simpler way to put it would to be imagining the division of the United States into states. While each state (a shard in this case) is part of the larger United States (Ethereum network), they have their own specific rules, boundaries, and subsets of populations. However, they do share a universal language and culture as part of their larger network that makes up the country.
 
-Or even better, in Vitalik Buterin°Øs own words:
+Or even better, in Vitalik Buterin‚Äôs own words:
 
- °∞Imagine that Ethereum has been split into thousands of islands. Each island can do its own thing. Each of the islands has its own unique features and everyone belonging on that island i.e., the accounts, can interact with each other AND they can freely indulge in all its features. If they want to contact other islands, they will have to use some sort of protocol.°±
+ ‚ÄúImagine that Ethereum has been split into thousands of islands. Each island can do its own thing. Each of the islands has its own unique features and everyone belonging on that island i.e., the accounts, can interact with each other AND they can freely indulge in all its features. If they want to contact other islands, they will have to use some sort of protocol.‚Äù
 
 As you can see, the concept of fragmenting the network into more efficient pieces allows the network to function as the sum of its parts, rather than being limited by the speed of each individual node.
 
 How Does Sharding Work in Blockchains?
-We will continue to use Ethereum as an example in this as it is the most well-known and arduous sharding attempts in the blockchain arena, as the Ethereum developers are implementing what is known as °∞state sharding°±.
+We will continue to use Ethereum as an example in this as it is the most well-known and arduous sharding attempts in the blockchain arena, as the Ethereum developers are implementing what is known as ‚Äústate sharding‚Äù.
 
-The current state of the Ethereum blockchain is known as the °∞global state°± and is what everyone can see when they look at the blockchain at a specific instance. The tricky part in implementing sharding in Ethereum is that by sharding the nodes into smaller subsets, these subsets need to be able to process specific sets of transactions while simultaneously updating the state of the network, all while ensuring it is valid.
+The current state of the Ethereum blockchain is known as the ‚Äúglobal state‚Äù and is what everyone can see when they look at the blockchain at a specific instance. The tricky part in implementing sharding in Ethereum is that by sharding the nodes into smaller subsets, these subsets need to be able to process specific sets of transactions while simultaneously updating the state of the network, all while ensuring it is valid.
 
 Sharding in Ethereum is supposed to be implemented in a two phase rollout, more than likely after Proof of Stake is implemented in the network. Phase one will be the data layer consisting of the consensus of what data is in the shards. Phase two is the state layer. All of this is very fluid, so a general breakdown of how it may work is below.
 
@@ -61,6 +63,6 @@ Sharding in Ethereum is expected to be implemented after the Casper PoS upgrade.
 Sharding has also been implemented in a few other platforms, most notably Zilliqa. However, Zilliqa does not implement state sharding at this time and instead focuses on providing a high throughput blockchain by utilizing transaction and computational sharding.
 
 Conclusion
-Sharding serves to offer some promising solutions to the elephant in the room of blockchain platforms right now, scalability. While Bitcoin°Øs lightning network is in the testing phase and has been showing some very promising progress so far, Ethereum°Øs solution brings with it some unique challenges as it is pegged as a world computer that is Turing complete.
+Sharding serves to offer some promising solutions to the elephant in the room of blockchain platforms right now, scalability. While Bitcoin‚Äôs lightning network is in the testing phase and has been showing some very promising progress so far, Ethereum‚Äôs solution brings with it some unique challenges as it is pegged as a world computer that is Turing complete.
 
-Sharding will directly work only at the protocol level, so to the end user or dapp developer it may not be necessarily relevant to learn about. Regardless, Ethereum°Øs attempt at state sharding for a vast, decentralized network is an impressive endeavor and will be an enormous feat of accomplishment if successfully implemented.
+Sharding will directly work only at the protocol level, so to the end user or dapp developer it may not be necessarily relevant to learn about. Regardless, Ethereum‚Äôs attempt at state sharding for a vast, decentralized network is an impressive endeavor and will be an enormous feat of accomplishment if successfully implemented.
