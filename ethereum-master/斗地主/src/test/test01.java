@@ -16,7 +16,7 @@ public class test01 {
 			list.add(new A(2)); 
 			list.add(new A(7));
 			list.add(new A(6));
-		//	Collections.sort(list);
+		//	Collections.sort(list);sun
 			for(int i=0;i<list.size();i++){
 				System.out.print(list.get(i).a);
 			}
