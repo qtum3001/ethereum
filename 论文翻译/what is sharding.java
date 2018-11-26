@@ -10,9 +10,12 @@ Sharding and Distributed Computing Background
 
 Sharding is actually much older than blockchain technology and has been implemented in a variety of systems from business database optimizations to Google’s global Spanner database. Essentially, sharding is a particular method for horizontally partitioning data within a database. More generally, the database is broken into little pieces called “shards”, that when aggregated together form the original database.
 
-In distributed blockchain networks, the network consists of a series of nodes connected in a peer to peer format, with no central authority. As is the case with current blockchain systems, each node stores all states of the network and processes all of the transactions. While this provides the high level security through decentralization, especially in Proof of Work systems such as Bitcoin and Ethereum, it leads to legitimate scaling problems.
 
-Using Ethereum as an example, a full node in the Ethereum network stores the entire state of the blockchain, including account balances, storage, and contract code. Unfortunately, as the network increases in size at an exponential pace, the consensus only increases linearly. This limitation is due to the communication needed between the nodes needed to reach consensus.
+ In distributed blockchain networks, the network consists of a series of nodes connected in a peer to peer format, with no central authority. As is the case with current blockchain systems, each node stores all states of the network and processes all of the transactions. While this provides the high level security through decentralization, especially in Proof of Work systems such as Bitcoin and Ethereum, it leads to legitimate scaling problems.
+ //在分布式区块链网络中，网络由一系列以对等格式连接的节点组成，没有中央权限。与当前区块链系统的情况一样，每个节点存储网络的所有状态并处理所有事务。虽然这通过分散化提供了高级别的安全性，特别是在比特币和以太坊等工作证明系统中，但它会导致合法的扩展问题。
+
+
+ Using Ethereum as an example, a full node in the Ethereum network stores the entire state of the blockchain, including account balances, storage, and contract code. Unfortunately, as the network increases in size at an exponential pace, the consensus only increases linearly. This limitation is due to the communication needed between the nodes needed to reach consensus.
 
 Nodes in the network do not have special privileges and every node in the network stores and processes every transaction. As a result, in a network the size of Ethereum’s, issues such as high gas costs and longer transaction confirmation times become noticeable problems when the network is strained. The network is only as fast as the individual nodes rather than the sum of its parts.
 
