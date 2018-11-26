@@ -1,6 +1,6 @@
 //
 
-vAll of the transactions that belong to the transaction group that are part of the specific shard.
+All of the transactions that belong to the transaction group that are part of the specific shard.
 
 属于特定分片的事务组的所有事务。
 
