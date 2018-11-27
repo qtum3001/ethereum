@@ -1,17 +1,17 @@
 What is Sharding? Guide to this Ethereum Scaling Concept Explained
 什么是Sharding？这个以太坊尺度概念的指南解释
 As the scaling debate in cryptocurrencies continues, some potential solutions have actually been in development for quite some time now. Specifically, in the case of Ethereum, where a large focus is placed on decentralization and security at the expense of scalability, the application of sharding in conjunction with implementing Proof of Stake consensus is seen as the much needed mechanism through which the network can scale to practical levels for applications while still retaining its decentralization and security.
-随着加密货币的扩展争论的继续，一些潜在的解决方案实际上已经开发了很长一段时间。具体而言，在以太坊中，以可扩展性为代价将重点放在分散化和安全性上，将分片与实施利益共识一致的应用视为网络可扩展到的急需机制。应用程序的实际水平，同时仍保持其权力下放和安全性。
+随着加密货币的扩展争论的继续，一些潜在的解决方案实际上已经开发了很长一段时间。具体而言，在以太坊中，以可扩展性为代价将重点放在去中心和安全性上，将分片与实施利益共识一致的应用视为网络可扩展到的急需机制。应用程序的实际水平，同时仍保持其去中心化和安全性。
 Sharding is a complex topic, especially when applied to a decentralized, peer to peer network such as Ethereum where the global state of the network constantly is updated. So what exactly is sharding and how can it help blockchain networks to scale?
-分片是一个复杂的主题，特别是当应用于分散的对等网络（如以太坊）时，网络的全局状态不断更新。那么什么是分片呢？它如何帮助区块链网络扩展呢？
+分片是一个复杂的主题，特别是当应用于去中心化的对等网络（如以太坊）时，网络的全局状态不断更新。那么什么是分片呢？它如何帮助区块链网络扩展呢？
 Sharding and Distributed Computing Background
 分片和分布式计算背景
 Sharding is actually much older than blockchain technology and has been implemented in a variety of systems from business database optimizations to Google’s global Spanner database. Essentially, sharding is a particular method for horizontally partitioning data within a database. More generally, the database is broken into little pieces called “shards”, that when aggregated together form the original database.
 分片实际上比区块链技术早得多，并且已在各种系统中实施，从业务数据库优化到Google的全球Spanner数据库。实质上，分片是一种在数据库中水平分区数据的特殊方法。更一般地说，数据库被分成称为“分片”的小块，当它们聚合在一起形成原始数据库时。
 In distributed blockchain networks, the network consists of a series of nodes connected in a peer to peer format, with no central authority. As is the case with current blockchain systems, each node stores all states of the network and processes all of the transactions. While this provides the high level security through decentralization, especially in Proof of Work systems such as Bitcoin and Ethereum, it leads to legitimate scaling problems.
-在分布式区块链网络中，网络由一系列以对等格式连接的节点组成，没有中央权限。与当前区块链系统的情况一样，每个节点存储网络的所有状态并处理所有事务。虽然这通过分散化提供了高级别的安全性，特别是在比特币和以太坊等工作证明系统中，但它会导致合法的扩展问题。
+在分布式区块链网络中，网络由一系列以点对点格式连接的无中央权限的节点组成。与当前区块链系统的情况一样，每个节点存储网络的所有状态并处理所有事务。虽然这通过去中心化提供了高级别的安全性，特别是在比特币和以太坊等工作证明系统中，但它会导致合法的扩展问题。
 Using Ethereum as an example, a full node in the Ethereum network stores the entire state of the blockchain, including account balances, storage, and contract code. Unfortunately, as the network increases in size at an exponential pace, the consensus only increases linearly. This limitation is due to the communication needed between the nodes needed to reach consensus.
-以以太坊为例，以太坊网络中的完整节点存储区块链的整个状态，包括账户余额，存储和合同代码。不幸的是，随着网络以指数速度增加，协商一致只会线性增加。这种限制是由于达成共识所需的节点之间所需的通信。
+以以太坊为例，以太坊网络中的完整节点存储区块链的整个状态，包括账户余额，存储和合同代码。不幸的是，随着网络以指数速度增加，共识只会线性增加。这种限制是由于达成共识所需的节点之间所需的通信。
 Nodes in the network do not have special privileges and every node in the network stores and processes every transaction. As a result, in a network the size of Ethereum’s, issues such as high gas costs and longer transaction confirmation times become noticeable problems when the network is strained. The network is only as fast as the individual nodes rather than the sum of its parts.
 网络中的节点没有特殊权限，网络中的每个节点都存储和处理每个事务。因此，在以太网的大小网络中，当网络紧张时，诸如高燃气成本和更长的交易确认时间之类的问题成为显着的问题。网络的速度与单个节点的速度一样快，而不是其各部分的总和。
 Sharding helps to alleviate these issues by providing an interesting, yet complex solution. The concept involves grouping subsets of nodes into shards which in turn process transactions specific to that shard. It allows the system to process many transactions in parallel, thus significantly increasing throughput.
