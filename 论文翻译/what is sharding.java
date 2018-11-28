@@ -2,15 +2,14 @@
 
 All of the transactions that belong to the transaction group that are part of the specific shard.
 
-属于特定分片的事务组的所有事务。
+//属于交易所的所有交易都是特定分片的一部分。
 
 Transactions are specific to each shard and occur between accounts native to that shard. When transactions are verified, the state of the network changes and account balances, storage, etc are updated. In order for the transaction group to verify as valid, the pre-state root of the transaction group must match the shard root in the global state. If they match, the transaction group is validated and the global state is updated through the particular shard ID state root.
-
-事务特定于每个分片，并发生在该分片的本机帐户之间。验证交易后，网络状态会发生变化，帐户余额，存储等也会更新。为了使事务组验证为有效，事务组的预状态根必须与全局状态中的分片根匹配。如果它们匹配，则验证事务组，并通过特定的分片ID状态根更新全局状态。
+//交易对于每个分片是具体的，并发生在该分片原始的账户之间。当交易被核实，网络的状态发生变化，账户余额、存储等信息会被更新。为了使交易所被认知有效，交易所的预状态跟必须在全球范状态分片的跟匹配。如果他们匹配则，交易所是有效的，全局状态通过特殊的分片ID状态跟更新。
 
 Instead of only containing a state root, each block of the Ethereum blockchain now contains both a state root and the transaction group root. The transaction group root is the merkle root of all of the transaction groups from the specific shards for that block of transactions. Basically, there is a merkle root of all of the different shards that contain the updated and verified transaction groups. This root is stored in the blockchain along with the updated state root.
+//相反地仅仅包含状态根，以太坊区块链的每个块现在都包含状态根和交易所根。交易所跟是来源于所有区块交易特定分片交易组的摩卡耳根。基本上，所有不同分片都有一个merkle根，其中包含更新和验证的事务组。此根与更新的状态根一起存储在区块链中。
 
-而不仅仅包含状态根，以太坊区块链的每个块现在都包含状态根和事务组根。事务组root是来自该事务块的特定分片的所有事务组的merkle根。基本上，所有不同分片都有一个merkle根，其中包含更新和验证的事务组。此根与更新的状态根一起存储在区块链中。
 
 The employment of merkle tree concepts in this structure is vital to ensuring validity of the blockchain. Understanding how a merkle tree and specifically a merkle root work, can help you to grasp these concepts much more easily.
 
