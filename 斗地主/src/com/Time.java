@@ -22,7 +22,7 @@ public class Time extends Thread {
 
 		while (i > -1 && isRun) {
 			main.time[1].setText("倒计时:" + i--);
-			second(1);// 等一秒，测试1
+			second(1);// 等一秒，测试1  678
 		}
 		if (i == -1)// 正常终结，说明超时，测试2321313
 			main.time[1].setText("不抢");
@@ -57,7 +57,7 @@ public class Time extends Thread {
 			} else {
 				main.time[0].setText("抢地主");
 				main.time[0].setVisible(true);
-				setlord(0);// 设定地主
+				setlord(0);// 设定地主dz
 				openlord(true);
 				second(3);
 				main.playerList[0].addAll(main.lordList);
