@@ -13,19 +13,19 @@ Instead of only containing a state root, each block of the Ethereum blockchain n
 
 The employment of merkle tree concepts in this structure is vital to ensuring validity of the blockchain. Understanding how a merkle tree and specifically a merkle root work, can help you to grasp these concepts much more easily.
 
-在这种结构中使用merkle树概念对于确保区块链的有效性至关重要。了解merkle树，特别是merkle root如何工作，可以帮助您更轻松地掌握这些概念。
+//在这种结构中使用merkle树概念对于确保区块链的有效性至关重要。了解merkle树，特别是merkle root如何工作，可以帮助您更轻松地掌握这些概念。
 
 Consensus within a shard is reached through a Proof of Stake consensus of randomly selected nodes that are applied to a shard for specific consensus round. This not only provides finality to the consensus, which is necessary within the shards, but also provides a particular defense to an attack that a Proof of Work blockchain would be susceptible to in this instance.
 
-通过随机选择的节点的共同证明达成共享，在特定共识轮次中应用于分片。这不仅为分享中的共识提供了终结性，而且还为在这种情况下工作证明区块链易受攻击的攻击提供了特定的防御。
+//通过随机选择的节点的共同证明达成共享，在特定共识轮次中应用于分片。这不仅为分享中的共识提供了终结性，而且还为在这种情况下工作证明区块链易受攻击的攻击提供了特定的防御。
 
 The hash power required to overrun a specific shard in a PoW sharded network is drastically reduced and the ability for a malicious actor to take over a shard through computational power is feasible. Through this, the bad actor could attack other shards through the communication protocol which is one of the more complicated and important features of sharding architecture. Random sampling selection of the validators within a shard manages to stifle this type of attack since a bad actor will not know which shard they are being placed in before they are actually placed in it. Further, random sampling will be used to select the validators that are actually validating from that random validating set.
 
-在PoW分片网络中溢出特定分片所需的散列功率大大降低，并且恶意行为者通过计算能力接管分片的能力是可行的。通过这种方式，坏人可以通过通信协议攻击其他分片，这是分片架构的一个更复杂和重要的特性。对碎片内的验证器进行随机抽样选择可以扼杀这种类型的攻击，因为坏的演员在实际放入它之前不会知道它们被放入哪个碎片。此外，随机采样将用于选择实际从该随机验证集验证的验证器。
+//在PoW分片网络中溢出特定分片所需的散列功率大大降低，并且恶意行为者通过计算能力接管分片的能力是可行的。通过这种方式，坏人可以通过通信协议攻击其他分片，这是分片架构的一个更复杂和重要的特性。对碎片内的验证器进行随机抽样选择可以扼杀这种类型的攻击，因为坏的演员在实际放入它之前不会知道它们被放入哪个碎片。此外，随机采样将用于选择实际从该随机验证集验证的验证器。
 
 The communication protocol is vital to the sharding architecture functioning correctly in the system. You can think of the communication protocol as the universal language that is consistent among the states as part of the larger United States. However, designing this protocol is highly challenging and needs to be performed so that it is only used when necessary. It becomes necessary when a specific node requires information that is not stored within its own shard and needs to find the shard with the requisite information. This communication is known as cross-shard communication.
 
-通信协议对于分片架构在系统中正确运行至关重要。您可以将通信协议视为通用语言，这些通用语言在作为较大美国的一部分的州之间是一致的。但是，设计此协议非常具有挑战性，需要执行以便仅在必要时使用。当特定节点需要未存储在其自己的分片中的信息并且需要查找具有必需信息的分片时，这变得必要。这种通信称为交叉分片通信。
+//通信协议对于分片架构在系统中正确运行至关重要。您可以将通信协议视为通用语言，这些通用语言在作为较大美国的一部分的州之间是一致的。但是，设计此协议非常具有挑战性，需要执行以便仅在必要时使用。当特定节点需要未存储在其自己的分片中的信息并且需要查找具有必需信息的分片时，这变得必要。这种通信称为交叉分片通信。
 
 The cross-shard communication is achieved through applying the concept of transaction receipts. The receipt for a transaction is stored in a merkle root that can be easily verified but that is not part of the state root. The shard receiving a transaction from another shard checks the merkle root to ensure that the receipt has not been spent. Essentially, the receipts are stored in a shared memory that can be verified by other shards, but not altered. Therefore, through a distributed storage of receipts, shards are able to communicate with each other.
 
